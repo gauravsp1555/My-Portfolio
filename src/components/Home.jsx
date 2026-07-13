@@ -8,7 +8,7 @@ function Home() {
 
       <div className="hero-grid">
         <div className="hero-content">
-          <div className="hero-badge">Welcome to my Portfolio</div>
+          <div className="hero-badge">Welcome to Logic world</div>
           <h1 className="hero-heading">Hi, I am Gaurav</h1>
           <p className="hero-desc">
             Full Stack Engineer | Python + React Developer
