@@ -1,4 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
+import qspiderImg from "../assets/qspider.jpg";
+import sureTrustImg from "../assets/sure.jpg";
 
 // Scroll reveal wrapper component
 function RevealCard({ children }) {
@@ -36,14 +38,7 @@ function RevealCard({ children }) {
 function Experience() {
   // SVG Logos Custom Designed directly in code
   const qSpidersLogo = (
-    <svg className="company-logo-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="50" cy="50" r="45" fill="#f97316" fillOpacity="0.1" stroke="#f97316" strokeWidth="4" />
-      <path d="M50 20C40 35 40 65 50 80" stroke="#f97316" strokeWidth="4" strokeLinecap="round" />
-      <path d="M50 20C60 35 60 65 50 80" stroke="#f97316" strokeWidth="4" strokeLinecap="round" />
-      <path d="M20 50C35 40 65 40 80 50" stroke="#f97316" strokeWidth="4" strokeLinecap="round" />
-      <path d="M20 50C35 60 65 60 80 50" stroke="#f97316" strokeWidth="4" strokeLinecap="round" />
-      <circle cx="50" cy="50" r="10" fill="#f97316" />
-    </svg>
+    <img src={qspiderImg} alt="QSpiders Logo" className="company-logo-svg" style={{ objectFit: 'contain', width: '100%', height: '100%', borderRadius: '50%' }} />
   );
 
   const techTechLogo = (
@@ -55,13 +50,7 @@ function Experience() {
   );
 
   const sureTrustLogo = (
-    <svg className="company-logo-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="50" cy="50" r="45" fill="#10b981" fillOpacity="0.1" stroke="#10b981" strokeWidth="4" />
-      <path d="M50 25C50 25 30 45 30 60C30 71 39 80 50 80C61 80 70 71 70 60C70 45 50 25 50 25Z" fill="#10b981" fillOpacity="0.3" stroke="#10b981" strokeWidth="4" />
-      <path d="M50 40V70" stroke="#ffffff" strokeWidth="4" strokeLinecap="round" />
-      <path d="M38 55C45 52 50 55 50 55" stroke="#ffffff" strokeWidth="4" strokeLinecap="round" />
-      <path d="M62 55C55 52 50 55 50 55" stroke="#ffffff" strokeWidth="4" strokeLinecap="round" />
-    </svg>
+    <img src={sureTrustImg} alt="SURE Trust Logo" className="company-logo-svg" style={{ objectFit: 'contain', width: '100%', height: '100%', borderRadius: '50%' }} />
   );
 
   const experiences = [
