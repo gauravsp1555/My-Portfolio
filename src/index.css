@@ -25,8 +25,7 @@
 
   font-family: var(--font-sans);
   color: var(--text-primary);
-  background-color: var(--bg-color);
-  background-image: var(--bg-gradient);
+  background-color: transparent;
   background-attachment: fixed;
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
@@ -961,7 +960,7 @@ body {
   font-family: var(--font-display);
   font-size: 1.45rem;
   font-weight: 700;
-  color: #f8fafc;
+  color: var(--text-primary); /* Adapt to theme */
   margin: 0;
   letter-spacing: -0.01em;
   display: flex;
@@ -973,7 +972,7 @@ body {
   font-family: var(--font-sans);
   font-size: 1.05rem;
   font-weight: 600;
-  color: #a855f7;
+  color: var(--accent-purple); /* Adapt to theme */
   margin: 0;
   display: flex;
   align-items: center;
@@ -999,43 +998,47 @@ body {
   gap: 8px;
   align-items: flex-end;
   text-align: right;
+  flex-shrink: 0; /* Prevent squishing of metadata */
 }
 
 .exp-meta-item {
   display: flex;
   align-items: center;
   gap: 8px;
-  color: #94a3b8;
+  color: var(--text-secondary); /* Dynamic theme color for readable contrast */
   font-size: 0.9rem;
   font-weight: 500;
+  white-space: nowrap; /* Prevent emoji and text from separating */
 }
 
 .meta-emoji {
   font-size: 1.1rem;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
 }
 
 .duration-pill {
-  background: rgba(255, 255, 255, 0.05);
-  color: #94a3b8;
+  background: var(--card-border);
+  color: var(--text-secondary);
   font-size: 0.72rem;
   font-weight: 600;
   padding: 2px 8px;
   border-radius: 9999px;
   margin-left: 4px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--card-border);
+  display: inline-block;
 }
 
 /* Card Body */
 .exp-card-body {
-  color: #cbd5e1;
+  color: var(--text-primary); /* Adapt to theme */
 }
 
 .exp-desc {
   font-size: 0.98rem;
   line-height: 1.6;
   margin: 0 0 20px;
-  color: #94a3b8;
+  color: var(--text-secondary); /* Adapt to theme */
 }
 
 .exp-desc-list {
@@ -1049,14 +1052,14 @@ body {
 .exp-desc-list li {
   font-size: 0.95rem;
   line-height: 1.55;
-  color: #94a3b8;
+  color: var(--text-secondary); /* Adapt to theme */
   position: relative;
   list-style-type: none;
 }
 
 .exp-desc-list li::before {
   content: "•";
-  color: #a855f7;
+  color: var(--accent-purple);
   font-weight: bold;
   display: inline-block;
   width: 1em;
@@ -1080,7 +1083,7 @@ body {
   top: 6px;
   bottom: 6px;
   width: 2px;
-  background: rgba(255, 255, 255, 0.08);
+  background: var(--card-border); /* Adapt to theme */
 }
 
 .nested-role-item {
@@ -1093,15 +1096,15 @@ body {
   top: 6px;
   width: 8px;
   height: 8px;
-  background: #111;
-  border: 2px solid #a855f7;
+  background: var(--bg-color); /* Adapt to theme */
+  border: 2px solid var(--accent-purple);
   border-radius: 50%;
   z-index: 2;
   transition: all 0.3s ease;
 }
 
 .nested-role-item:hover .nested-role-node {
-  background: #a855f7;
+  background: var(--accent-purple);
   transform: scale(1.3);
   box-shadow: 0 0 8px rgba(168, 85, 247, 0.6);
 }
@@ -1115,7 +1118,7 @@ body {
   font-family: var(--font-display);
   font-size: 1.15rem;
   font-weight: 700;
-  color: #f1f5f9;
+  color: var(--text-primary); /* Adapt to theme */
   margin: 0 0 10px;
   display: flex;
   justify-content: space-between;
@@ -1128,9 +1131,9 @@ body {
   font-family: var(--font-sans);
   font-size: 0.85rem;
   font-weight: 500;
-  color: #94a3b8;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  color: var(--text-secondary); /* Adapt to theme */
+  background: var(--card-border);
+  border: 1px solid var(--card-border);
   padding: 2px 8px;
   border-radius: 9999px;
   display: flex;
@@ -1147,9 +1150,9 @@ body {
 }
 
 .exp-skill-tag {
-  background: rgba(255, 255, 255, 0.02);
-  color: #60a5fa;
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: var(--card-border); /* Adapt to theme */
+  color: var(--text-secondary); /* Adapt to theme */
+  border: 1px solid var(--card-border);
   padding: 6px 12px;
   border-radius: 9999px;
   font-size: 0.82rem;
@@ -1159,16 +1162,17 @@ body {
 }
 
 .experience-card:hover .exp-skill-tag:hover {
-  background: rgba(59, 130, 246, 0.08);
-  border-color: rgba(59, 130, 246, 0.3);
+  background: rgba(168, 85, 247, 0.15);
+  border-color: rgba(168, 85, 247, 0.3);
+  color: var(--text-primary);
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(59, 130, 246, 0.15);
+  box-shadow: 0 4px 8px rgba(168, 85, 247, 0.15);
 }
 
 /* Visit Link Button */
 .exp-card-footer {
   margin-top: 24px;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid var(--card-border); /* Adapt to theme */
   padding-top: 16px;
   display: flex;
   justify-content: flex-start;
@@ -1180,7 +1184,7 @@ body {
   gap: 8px;
   background: rgba(168, 85, 247, 0.08);
   border: 1px solid rgba(168, 85, 247, 0.2);
-  color: #c084fc;
+  color: var(--accent-purple); /* Adapt to theme */
   padding: 8px 16px;
   border-radius: 8px;
   font-size: 0.85rem;
